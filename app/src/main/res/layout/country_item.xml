@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        app:cardElevation="@dimen/_1sdp"
+        app:cardCornerRadius="@dimen/_3sdp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:id="@+id/flag"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/mmt_mediom_bold_font"
+                android:gravity="center|left"
+                android:padding="@dimen/_1sdp"
+                android:textColor="#000000"
+                android:text="Afghanistan"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toEndOf="@+id/flag"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/flag"
+                app:layout_constraintTop_toBottomOf="@+id/name">
+
+                <ImageView
+                    android:src="@drawable/ic_baseline_location_city_24"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_gravity="center"
+                    android:layout_height="@dimen/_14sdp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:fontFamily="@font/mmt_normal_font"
+                    android:gravity="center|left"
+                    android:padding="@dimen/_1sdp"
+                    android:text="Capital :"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <TextView
+                android:id="@+id/Capital"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/mmt_normal_font"
+                android:gravity="center|left"
+                android:padding="@dimen/_1sdp"
+                android:text="Yerevan"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/flag"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_people_24" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mmt_normal_font"
+                    android:gravity="center|left"
+                    android:padding="@dimen/_1sdp"
+                    android:text="Population :"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <TextView
+                android:id="@+id/population"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/mmt_normal_font"
+                android:gravity="center|left"
+                android:maxEms="6"
+                android:ellipsize="end"
+                android:padding="@dimen/_1sdp"
+                android:text="27657141231000"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat1"
+                app:layout_constraintTop_toBottomOf="@+id/Capital" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat2"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/flag">
+
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_subregion" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:fontFamily="@font/mmt_normal_font"
+                    android:gravity="center|left"
+                    android:padding="@dimen/_1sdp"
+                    android:text="Region :"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <TextView
+                android:id="@+id/Region"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:fontFamily="@font/mmt_normal_font"
+                android:gravity="center|left"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_1sdp"
+                android:text="Asia"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat2"
+                app:layout_constraintTop_toBottomOf="@+id/flag" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/Region"
+                app:layout_constraintTop_toBottomOf="@+id/flag">
+
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_region" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:fontFamily="@font/mmt_normal_font"
+                    android:gravity="center|left"
+                    android:padding="@dimen/_1sdp"
+                    android:text="SubRegion :"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/SubRegion"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/mmt_normal_font"
+                android:gravity="center|right"
+                android:padding="@dimen/_1sdp"
+                android:text="South-Eastern Asia"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat3"
+                app:layout_constraintTop_toBottomOf="@+id/flag" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat4"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2">
+
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_fence_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mmt_normal_font"
+                    android:gravity="center|left"
+                    android:padding="@dimen/_1sdp"
+                    android:text="Borders :"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/Borders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mmt_normal_font"
+                android:gravity="center|left"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_1sdp"
+                android:singleLine="false"
+                android:maxEms="15"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat4"
+                app:layout_constraintTop_toBottomOf="@+id/Region" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Borders">
+
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_language" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mmt_normal_font"
+                    android:gravity="center|left"
+                    android:padding="@dimen/_1sdp"
+                    android:text="Language :"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/Language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mmt_normal_font"
+                android:gravity="center|left"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_1sdp"
+                android:singleLine="false"
+                android:maxEms="14"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat5"
+                app:layout_constraintTop_toBottomOf="@+id/Borders" />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
