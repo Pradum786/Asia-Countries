@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -39,13 +40,16 @@ public class MainActivity extends AppCompatActivity {
    private roomDB mroomDB;
     private CountryAdapter listAdapter;
     private RecyclerView recycler;
-
+    ProgressDialog pd;
     List<Country> country1 = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+         pd = new ProgressDialog(this);
+        pd.setMessage("Please Wait..");
+
 
         recycler = findViewById(R.id.detail);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -61,9 +65,11 @@ public class MainActivity extends AppCompatActivity {
 
             getData();
         }else {
+            pd.show();
             Toast.makeText(this, "No Internet Conection", Toast.LENGTH_LONG).show();
            country1 = mroomDB.countryDao().getAll();
            showdata(country1);
+
 
         }
 
@@ -73,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getData() {
 
+        pd.show();
 
         Call<String> call =api_caller.getApi_services().getCountries("Asia");
 
@@ -165,9 +172,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void showdata(List<Country> country1) {
 
+        pd.dismiss();
+
         if (country1.size()==0) {
             Toast.makeText(this, "No Data Download", Toast.LENGTH_LONG).show();
         }else {
+
         listAdapter = new CountryAdapter(country1, this);
         recycler.setAdapter(listAdapter);}
 
