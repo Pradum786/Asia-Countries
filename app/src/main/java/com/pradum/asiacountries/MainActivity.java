@@ -12,6 +12,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.caverock.androidsvg.SVG;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private CountryAdapter listAdapter;
     private RecyclerView recycler;
     ProgressDialog pd;
+    Button delete;
     List<Country> country1 = new ArrayList<>();
 
     @Override
@@ -49,12 +52,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
          pd = new ProgressDialog(this);
         pd.setMessage("Please Wait..");
+        mroomDB= roomDB.getInstance(MainActivity.this);
+         delete=findViewById(R.id.delete);
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mroomDB.countryDao().delete();
+
+            }
+        });
 
 
         recycler = findViewById(R.id.detail);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(layoutManager);
-        mroomDB= roomDB.getInstance(MainActivity.this);
+
 
 
         ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -175,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
         pd.dismiss();
 
         if (country1.size()==0) {
+            delete.setVisibility(View.GONE);
             Toast.makeText(this, "No Data Download", Toast.LENGTH_LONG).show();
         }else {
 
